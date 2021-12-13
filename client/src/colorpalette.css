@@ -1,0 +1,17 @@
+.palette {
+  border: 2px solid black;
+  width: fit-content;
+  height: fit-content;
+  margin: 0px auto;
+  padding: 5% 1%;
+  /* padding-left: 7%; */
+  display: flex;
+  gap: 15%;
+  flex-wrap: wrap;
+  background-color: gray;
+}
+.star {
+  width: 1rem;
+  height: 1rem;
+ 
+}

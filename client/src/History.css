@@ -1,0 +1,24 @@
+.tourhistorycontent{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.historycontent{
+    border: 3px solid white;
+    width:50vw;
+    height: fit-content;
+    padding: 2%;
+    margin: 2%; 
+  }
+.singledaycontent{
+    border: 2px solid black;
+    width:45vw;
+    height: fit-content;
+   margin:1%;
+   padding: 3%;
+}
+.tourhistoryheaders{
+ 
+    text-transform: uppercase;
+    -webkit-text-stroke: 2px blue;
+  }

@@ -1,0 +1,38 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+.welcomelayout {
+  height: 100vh;
+  background: url("./images/background.jpg");
+  display: flex;
+justify-content: center;
+align-items: center;
+}
+.welcomelayout > form {
+  border-radius: 20px;
+  width: fit-content;
+  padding: 3% 5%;
+  height: fit-content;
+  background: white;
+ }
+.welcomelayout >form > button{
+margin: 1%;
+border-radius: 10px;
+color: white;
+background: black;
+padding: 5%;
+}
+.welcomelayout > label{
+color:red;
+font-weight: 800;
+}
+.welcomelayout >form > h6{
+font-size: 0.7rem;
+}
+.linkbar{
+text-decoration: none;
+}
+span {
+  color: red;
+}

@@ -1,0 +1,28 @@
+nav {
+  color: white;
+  /* height: 10vh; */
+  height: 4rem;
+  display: flex;
+  background: transparent;
+  position: static;
+}
+nav > h4 {
+
+  margin-right: auto;
+  font-size: 2.5vw;
+ 
+}
+
+.lightbtn {
+  width: 3rem;
+  height: 1.5rem;
+  color: black;
+  background: #61dafb;
+  border-radius: 10px;
+}
+
+.logout{
+  width: 3rem;
+  height: fit-content;
+  margin-right: 1rem;
+}

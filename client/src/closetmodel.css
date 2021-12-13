@@ -1,0 +1,67 @@
+.model {
+  position: fixed;
+  opacity: 0.9;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  margin: 5%;
+  transition: all 0.3s ease-in-out;
+  box-sizing: border-box;
+}
+.modelarea {
+  border: 2px solid black;
+  height: fit-content;
+  width: fit-content;
+ 
+}
+.modelheader {
+  background: black;
+  height: 5vh;
+}
+.modelheader > div {
+  margin-left: auto;
+  color: black;
+  width: 2rem;
+  background-color: white;
+  height: 2rem;
+}
+.modelcontent {
+  background-color: white;
+  padding: 5%;
+   height: 70vh;
+
+}
+.selectitems {
+  display: flex;
+  justify-content: space-around;
+  height: 45%;
+  /* flex-wrap:wrap; */
+}
+.normal {
+  border: 1px solid black;
+  height: fit-content;
+  width: fit-content;
+  margin: 0rem 1rem;
+}
+.top {
+  border: 3px solid red;
+  height: fit-content;
+  width: fit-content;
+  margin: 0rem 1rem;
+}
+.bottom {
+  border: 3px solid red;
+  height: fit-content;
+  width: fit-content;
+  margin: 0rem 1rem;
+}
+.modelimg {
+  height: 20vh;
+  width: 12vw;
+  background-color: gray;
+}
+.modelcontent > h5 {
+  font-size: 1rem;
+}

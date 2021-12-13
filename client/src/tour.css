@@ -1,0 +1,53 @@
+#tour {
+  background: #1d2026;
+  min-height: 100vh;
+  
+  color: white;
+}
+.tourheaders{
+  display: flex;
+}
+.tourheaders > button{
+  height: fit-content;
+  width: 5rem;
+  margin: 5%;
+  border-radius: 10px;
+  border: 3px solid white;
+  color: black;
+  background:#dbed64;
+  font-weight: 900;
+  
+}
+.tourheading {
+  font-size: 2.5rem;
+  padding: 1% 10%;
+  margin-right: auto;
+}
+.submithandler {
+  border: 3px solid blue;
+  color: blue;
+  background: #1d2026;
+  width: 5rem;
+  height: 2rem;
+  margin: 1.5rem 1rem;
+}
+.mainformlabel {
+  font-size: 2rem;
+}
+.mainform > input {
+  width: 10vw;
+  height: 1.5rem;
+}
+hr {
+  border: 1px solid #dbed64;
+}
+.mainform {
+  border: 1px solid white;
+  width: 25vw;
+  padding: 3%;
+  margin-left:4rem ;
+}
+.colorselector {
+  display: flex;
+  gap: 2%;
+}
