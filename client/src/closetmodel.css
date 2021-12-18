@@ -14,7 +14,6 @@
   border: 2px solid black;
   height: fit-content;
   width: fit-content;
- 
 }
 .modelheader {
   background: black;
@@ -30,14 +29,12 @@
 .modelcontent {
   background-color: white;
   padding: 5%;
-   height: 70vh;
-
+  height: 70vh;
 }
 .selectitems {
   display: flex;
   justify-content: space-around;
   height: 45%;
-  /* flex-wrap:wrap; */
 }
 .normal {
   border: 1px solid black;

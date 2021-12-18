@@ -3,17 +3,14 @@ import { Navbar } from "./navbar";
 import { Closetmodel } from "./closetmodel";
 import lamp from "./images/lamp.png";
 import light from "./images/light.png";
-import black from"./images/black.png";
-import newmodel from "./images/newmodel.png";
 import { useState } from "react";
 import { useHistory } from "react-router";
 
-
 export function Component({
-  lighting,  
+  lighting,
   setlighting,
   closetcolor,
-  setclosetcolor,    
+  setclosetcolor,
 }) {
   const preDefinedMatches = [
     { 1: "black", 2: "skyblue" },
@@ -21,56 +18,70 @@ export function Component({
     { 1: "pink", 2: "grey" },
     { 1: "orange", 2: "blue" },
     { 1: "white", 2: "#95ce95" },
-  ];   
+  ];
   const history = useHistory();
 
   const [color, setcolor] = useState({});
   const [closet, setcloset] = useState(false);
-const[preview,setpreview]=useState(false);
+  const [preview, setpreview] = useState(false);
 
   function getRandamized() {
     setpreview(true);
     var randomMatch =
       preDefinedMatches[Math.floor(Math.random() * preDefinedMatches.length)];
-    setcolor({ 1: randomMatch[1], 2: randomMatch[2] });  
+    setcolor({ 1: randomMatch[1], 2: randomMatch[2] });
   }
 
   function fromCloset() {
     setpreview(true);
-    if(localStorage.getItem("token")){
+    if (sessionStorage.getItem("token")) {
       var tone = ["light", "dark"];
       var randomToneTop = tone[Math.floor(Math.random() * tone.length)];
       if (randomToneTop == "light") var randomToneBottom = "dark";
       else var randomToneBottom = "light";
-      var topRange = JSON.parse(localStorage.getItem("value")).top[randomToneTop];
-      var bottomRange = JSON.parse(localStorage.getItem("value")).bottom[
+      var topRange = JSON.parse(sessionStorage.getItem("value")).top[
+        randomToneTop
+      ];
+      var bottomRange = JSON.parse(sessionStorage.getItem("value")).bottom[
         randomToneBottom
       ];
-      var randomColorTop = topRange[Math.floor(Math.random() * topRange.length)];
+      var randomColorTop =
+        topRange[Math.floor(Math.random() * topRange.length)];
       var randomColorBottom =
         bottomRange[Math.floor(Math.random() * bottomRange.length)];
       setcolor({ 1: randomColorTop, 2: randomColorBottom });
-    }
-    else   history.push("/login");
+    } else history.push("/login");
   }
   return (
     <div className="basepage">
       <Navbar setlighting={setlighting} lighting={lighting} />
 
       <div className="maintemplate">
-  {/* {preview && <Preview color={color}/>} */}
-      <div className="imagepositioning">
-<img src={lamp} className="lamp" alt="lamp" />
-{lighting ? <img src={light} className="light" alt="light" /> : <div className="dark"></div>}
-{/* <img src={newmodel} className="customtop" /> */}
-<div className="svgsection">
-          <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
- width="22rem" height="35rem" viewBox="0 0 5400.000000 7200.000000"
- preserveAspectRatio="xMidYMid meet" className="componenttop">
+        <div className="imagepositioning">
+          <img src={lamp} className="lamp" alt="lamp" />
+          {lighting ? (
+            <img src={light} className="light" alt="light" />
+          ) : (
+            <div className="dark"></div>
+          )}
 
-<g transform="translate(0.000000,7800.000000) scale(0.100000,-0.100000)"
-fill={color[1] } stroke="none">
-<path d="M27996 55095 c-3 -8 -8 -37 -12 -64 -5 -40 -1 -63 25 -132 33 -90 65   
+          <div className="svgsection">
+            <svg
+              version="1.0"
+              xmlns="http://www.w3.org/2000/svg"
+              width="22rem"
+              height="35rem"
+              viewBox="0 0 5400.000000 7200.000000"
+              preserveAspectRatio="xMidYMid meet"
+              className="componenttop"
+            >
+              <g
+                transform="translate(0.000000,7800.000000) scale(0.100000,-0.100000)"
+                fill={color[1]}
+                stroke="none"
+              >
+                <path
+                  d="M27996 55095 c-3 -8 -8 -37 -12 -64 -5 -40 -1 -63 25 -132 33 -90 65   
 -220 76 -311 7 -63 13 -59 -96 -74 -42 -5 -59 -17 -160 -110 -72 -65 -179
 -147 -289 -221 -165 -111 -188 -123 -405 -211 l-230 -94 -224 22 -224 22 -98
 -98 -97 -97 -36 -146 c-29 -121 -36 -172 -41 -300 -6 -141 -4 -167 21 -302
@@ -122,17 +133,27 @@ l-840 51 -565 -6 c-311 -3 -892 -11 -1292 -17 -766 -11 -704 -12 -1283 31
 -697 -39 -870 -49 l-315 -19 -359 44 c-198 25 -362 46 -364 48 -2 3 -3 80 -2
 173 1 188 -8 146 134 611 31 101 56 189 56 196 0 7 -37 38 -82 69 -46 31 -149
 112 -229 180 l-147 123 -138 38 c-199 54 -324 76 -440 76 -81 0 -103 -3 -108
--15z"/>
-</g>
-</svg>
+-15z"
+                />
+              </g>
+            </svg>
 
-<svg version="1.0" xmlns="http://www.w3.org/2000/svg"
- width="22rem" height="35rem" viewBox="0 0 5400.000000 7200.000000"
- preserveAspectRatio="xMidYMid meet" className="componentbottom">
-
-<g transform="translate(0.000000,4000.000000) scale(0.100000,-0.100000)"
-fill={color[2] } stroke="none" >
-<path d="M31284 39639 c-27 -18 -186 -115 -354 -217 -168 -102 -345 -210 -394
+            <svg
+              version="1.0"
+              xmlns="http://www.w3.org/2000/svg"
+              width="22rem"
+              height="35rem"
+              viewBox="0 0 5400.000000 7200.000000"
+              preserveAspectRatio="xMidYMid meet"
+              className="componentbottom"
+            >
+              <g
+                transform="translate(0.000000,4000.000000) scale(0.100000,-0.100000)"
+                fill={color[2]}
+                stroke="none"
+              >
+                <path
+                  d="M31284 39639 c-27 -18 -186 -115 -354 -217 -168 -102 -345 -210 -394
 -240 -49 -30 -126 -71 -170 -90 -45 -19 -137 -58 -206 -87 -148 -62 -736 -311
 -1330 -563 -266 -112 -468 -192 -540 -212 -139 -38 -428 -120 -972 -274 l-407
 -115 -578 -71 c-318 -39 -701 -86 -851 -105 -150 -19 -279 -32 -285 -30 -7 3
@@ -169,19 +190,19 @@ l115 -315 131 -725 c72 -399 160 -880 196 -1070 36 -190 85 -451 109 -580 30
 115 401 194 672 379 1317 94 326 100 352 301 1375 l205 1043 90 1260 91 1260
 24 1030 c13 567 27 1116 30 1220 6 181 4 213 -44 675 -28 267 -55 526 -61 575
 -5 50 -42 402 -81 784 l-71 694 -73 156 c-40 86 -163 347 -274 581 l-201 425
--97 97 c-54 54 -102 98 -108 98 -6 0 -33 -14 -61 -31z" />
-</g>
-</svg> 
-</div>
-<div className="color-box"> 
+-97 97 c-54 54 -102 98 -108 98 -6 0 -33 -14 -61 -31z"
+                />
+              </g>
+            </svg>
+          </div>
+          <div className="color-box">
             <div className="section1" style={{ background: color[1] }}></div>
             <div className="section2" style={{ background: color[2] }}></div>
           </div>
-
-</div>
+        </div>
         <div className="content-box">
-          <h3 > Fashion </h3>
-          <h4 >Your idea partner</h4>  
+          <h3> Fashion </h3>
+          <h4>Your idea partner</h4>
 
           <div className="cboxbtns">
             <div className="choicebtn" onClick={() => getRandamized()}>
@@ -193,11 +214,10 @@ l115 -315 131 -725 c72 -399 160 -880 196 -1070 36 -190 85 -451 109 -580 30
             <div className="choicebtn" onClick={() => setcloset(true)}>
               closet
             </div>
-            <div className="choicebtn" onClick={() => history.push("/tour")} >
-             Tour
+            <div className="choicebtn" onClick={() => history.push("/tour")}>
+              Tour
             </div>
           </div>
-          
 
           {closet == true ? (
             <Closetmodel
@@ -208,10 +228,8 @@ l115 -315 131 -725 c72 -399 160 -880 196 -1070 36 -190 85 -451 109 -580 30
           ) : (
             ""
           )}
-           
         </div>
       </div>
-      {/* <img src={top} className="innersquares"/>  */}
     </div>
   );
 }

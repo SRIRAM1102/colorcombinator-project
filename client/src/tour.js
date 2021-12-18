@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Navbar } from "./navbar";
-import { Link,Redirect } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import "./tour.css";
 import { Tourform } from "./Tourform";
 import { useHistory } from "react-router";
@@ -10,12 +10,13 @@ export function Tour({ lighting, setlighting }) {
   const [tourtop, settourtop] = useState(null);
   const [tourbottom, settourbottom] = useState(null);
   const [tdata, settdata] = useState([]);
+  const [show, setshow] = useState(false);
   const history = useHistory();
- 
+
   function mainFormHandler(e) {
     e.preventDefault();
     let noOfDays = e.target[1].value;
-    localStorage.setItem("tourname", e.target[0].value);
+    sessionStorage.setItem("tourname", e.target[0].value);
 
     var range = new Set();
     for (var i = 1; i <= noOfDays; i++) {
@@ -23,7 +24,7 @@ export function Tour({ lighting, setlighting }) {
     }
     range = [...range];
     setdays(range);
-   
+    setshow(true);
   }
 
   function finanalTourData() {
@@ -33,39 +34,41 @@ export function Tour({ lighting, setlighting }) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        id: localStorage.getItem("userid"),     
+        id: sessionStorage.getItem("userid"),
         data: tdata,
-        tourname: localStorage.getItem("tourname"),
+        tourname: sessionStorage.getItem("tourname"),
       }),
-    }).then((response) => response.json())
-    .then((data) =>getData(data))
-  
-    function getData(data){
-  
-      localStorage.setItem("value", JSON.stringify(data))
-    }
-    localStorage.removeItem("tourname");
-    
-  }
-  
- 
- 
+    })
+      .then((response) => response.json())
+      .then((data) => getData(data));
+    alert("Tour details has been added");
 
-return (      
+    function getData(data) {
+      sessionStorage.setItem("value", JSON.stringify(data));
+    }
+    sessionStorage.removeItem("tourname");
+    history.push("/");
+  }
+  return (
     <>
-      {localStorage.getItem("token") ? (
+      {sessionStorage.getItem("token") ? (
         <div id="tour">
           <Navbar setlighting={setlighting} lighting={lighting} />
           <hr />
           <div className="tourheaders">
-          <h3 className="tourheading">Your tour plan!</h3>
-          <button><Link to="/tour/history">History</Link></button>
+            <h3 className="tourheading">Your tour plan!</h3>
+            <button>
+              <Link to="/tour/history">History</Link>
+            </button>
           </div>
 
           <form onSubmit={mainFormHandler} className="mainform">
-            <label htmlFor="tourname" /> Name of travel:<br />
-            <input type="input" name="tourname" id="tourname" required /> <br /><br />
-            <label htmlFor="days" /> Days of travel:<br />
+            <label htmlFor="tourname" /> Name of travel:
+            <br />
+            <input type="input" name="tourname" id="tourname" required /> <br />
+            <br />
+            <label htmlFor="days" /> Days of travel:
+            <br />
             <input type="input" name="days" id="days" required /> <br />
             <button type="submit" className="submithandler">
               Submit
@@ -81,17 +84,18 @@ return (
               tourbottom={tourbottom}
               settdata={settdata}
               tdata={tdata}
-             
             />
           ))}
 
-        {days>0 && <button  className="submithandler" onClick={()=>finanalTourData()}>submit</button> }  
+          {show && (
+            <button className="submithandler" onClick={() => finanalTourData()}>
+              submit
+            </button>
+          )}
         </div>
       ) : (
         <Redirect to="/login" />
-      )} 
+      )}
     </>
   );
 }
-
-

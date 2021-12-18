@@ -27,9 +27,11 @@ export function Signup() {
         .then((data) => nextSteps(data));
 
       function nextSteps(data) {
-        if (data.msg) alert(data.msg);
-        historys.push("/login");
-        window.location.reload();
+        if (data.msg) {
+          alert(data.msg);
+        } else {
+          historys.push("/login");
+        }
       }
     }
   }
@@ -62,10 +64,17 @@ export function Signup() {
         <br />
         <br />
         <h6>
-          Already having an account?<Link to="/login" className="linkbar" >Login</Link>
+          Already having an account?
+          <Link to="/login" className="linkbar">
+            Login
+          </Link>
         </h6>
         <button type="submit">Submit</button>
-        <button><Link to="/">Back to home</Link></button>
+        <button>
+          <Link to="/" className="linktag">
+            Back to home
+          </Link>
+        </button>
       </form>
     </div>
   );

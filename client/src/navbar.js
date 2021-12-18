@@ -1,19 +1,12 @@
 import "./navbar.css";
-import user from "./images/user.png";
-import InputLabel from "@mui/material/InputLabel";
-import MenuItem from "@mui/material/MenuItem";
-import FormControl from "@mui/material/FormControl";
-import Select, { SelectChangeEvent } from "@mui/material/Select";
-
 
 export function Navbar({ setlighting, lighting, setlogin }) {
-
   function removeTokens() {
-    localStorage.removeItem("token");
-    localStorage.removeItem("userid");
-    localStorage.removeItem("value");
-    localStorage.removeItem("tourname");
-  
+    sessionStorage.removeItem("token");
+    sessionStorage.removeItem("userid");
+    sessionStorage.removeItem("value");
+    sessionStorage.removeItem("tourname");
+
     alert("account has been logout");
   }
 
@@ -23,8 +16,9 @@ export function Navbar({ setlighting, lighting, setlogin }) {
         ligths
       </button>
       <h4>Color combinator</h4>
-    <button onClick={() => removeTokens()} className="logout">Log out</button>
-
- </nav>
+      <button onClick={() => removeTokens()} className="logout">
+        Log out
+      </button>
+    </nav>
   );
 }

@@ -1,16 +1,14 @@
 nav {
   color: white;
-  /* height: 10vh; */
+
   height: 4rem;
   display: flex;
   background: transparent;
   position: static;
 }
 nav > h4 {
-
   margin-right: auto;
   font-size: 2.5vw;
- 
 }
 
 .lightbtn {
@@ -21,7 +19,7 @@ nav > h4 {
   border-radius: 10px;
 }
 
-.logout{
+.logout {
   width: 3rem;
   height: fit-content;
   margin-right: 1rem;
