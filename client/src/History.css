@@ -33,6 +33,14 @@
   color: white;
   font-size: 1.7rem;
 }
+.tourheaders{
+
+ margin: 2%;
+}
+.tourheaders>button{
+  margin-left: auto;
+  cursor: pointer;
+}
 span {
   color: black;
   font-weight: 600;

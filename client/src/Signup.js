@@ -4,14 +4,18 @@ import "./Signup.css";
 
 export function Signup() {
   const historys = useHistory();
-  function handleSigupEvent(e) {
+ function handleSigupEvent(e) {
     e.preventDefault();
     let password = e.target[2].value;
     let confirmPassword = e.target[3].value;
 
     if (password != confirmPassword) {
       alert("password doesnot match");
-    } else {
+    }
+    else if(password.length<8 || confirmPassword.length<8){
+       alert("Password length should be greater than 8")
+    } 
+    else {
       fetch("https://colorcombi.herokuapp.com/signup", {
         method: "POST",
         headers: {
@@ -29,31 +33,33 @@ export function Signup() {
       function nextSteps(data) {
         if (data.msg) {
           alert(data.msg);
-        } else {
+        } 
+        else if(data.sucess){ 
+        
           historys.push("/login");
-        }
+      }
       }
     }
   }
   return (
     <div className="welcomelayout">
       <form onSubmit={handleSigupEvent}>
-        <label htmlFor="userName" /> <span>*</span> Username: <br />
+        <label htmlFor="userName" > <span>*</span> Username:</label> <br />
         <input type="text" name="userName" id="userName" required />
         <br />
         <br />
-        <label htmlFor="EmailId" />
-        <span>*</span> EmailId:
+        <label htmlFor="EmailId" >
+        <span>*</span> EmailId:</label>
         <br />
         <input type="email" name="EmailId" id="EmailId" required />
         <br />
         <br />
-        <label htmlFor="Password" /> <span>*</span> Password:
+        <label htmlFor="Password" > <span>*</span> Password:</label>
         <br />
         <input type="password" name="Password" id="Password" required />
         <br />
         <br />
-        <label htmlFor="ConfirmPasword" /> <span>*</span> ConfirmPasword:
+        <label htmlFor="ConfirmPasword" > <span>*</span> ConfirmPasword:</label>
         <br />
         <input
           type="password"

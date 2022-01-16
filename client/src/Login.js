@@ -34,26 +34,20 @@ export function Login() {
   return (
     <div className="welcomelayout">
       <form onSubmit={handleLoginEvent}>
-        <label htmlFor="EmailId" /> <span>*</span> EmailId:
+        <label htmlFor="EmailId" > <span>*</span> EmailId:</label>
         <br />
         <input type="email" name="EmailId" id="EmailId" required />
         <br />
         <br />
-        <label htmlFor="Password" /> <span>*</span> Password:
+        <label htmlFor="Password" > <span>*</span> Password:</label>
         <br />
         <input type="password" name="Password" id="Password" required />
         <br />
         <br />
+        <button type="submit">Submit</button>
         <h6>
           New user?<Link to="/signup">Signup</Link>
         </h6>
-        <button type="submit">Submit</button>
-        <button>
-          {" "}
-          <Link to="/" className="linktag">
-            Back to home
-          </Link>
-        </button>
       </form>
     </div>
   );

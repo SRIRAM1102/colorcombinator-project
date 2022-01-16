@@ -12,7 +12,7 @@ export function History({ lighting, setlighting }) {
     objArray.push(totaltour[key]);
     tourname.push(key);
   });
-
+ 
   return (
     <div id="tour">
       <Navbar setlighting={setlighting} lighting={lighting} />

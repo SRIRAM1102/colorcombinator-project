@@ -9,6 +9,7 @@ nav {
 nav > h4 {
   margin-right: auto;
   font-size: 2.5vw;
+  cursor: pointer;
 }
 
 .lightbtn {
@@ -20,7 +21,16 @@ nav > h4 {
 }
 
 .logout {
-  width: 3rem;
-  height: fit-content;
-  margin-right: 1rem;
+  width: 5rem;
+  height: 2.5rem;
+  margin: 0.5rem 1rem;
+font-size: 1rem;
+font-weight: 500;
+border: 3px solid black;
+cursor: pointer;
+}
+.signup{
+  background: black;
+  border: none;
+  color:white;
 }

@@ -200,36 +200,49 @@ l115 -315 131 -725 c72 -399 160 -880 196 -1070 36 -190 85 -451 109 -580 30
             <div className="section2" style={{ background: color[2] }}></div>
           </div>
         </div>
+
+        <div className="detailtab">
         <div className="content-box">
           <h3> Fashion </h3>
           <h4>Your idea partner</h4>
 
-          <div className="cboxbtns">
+          <div className="cboxbtns"> 
             <div className="choicebtn" onClick={() => getRandamized()}>
-              Randamize
+             <i>Randamize</i> 
             </div>
             <div className="choicebtn" onClick={() => fromCloset()}>
-              from closet
-            </div>
+              <i> From closet</i>
+              </div>
             <div className="choicebtn" onClick={() => setcloset(true)}>
-              closet
-            </div>
+              <i> Closet</i>
+             </div>
             <div className="choicebtn" onClick={() => history.push("/tour")}>
-              Tour
-            </div>
+              <i>Tour</i>
+              </div>
+          
+        
+       </div>
+       
           </div>
-
+          <div className="detailtabs">
+         <h6><u>Randamize:</u> Will give you evergreen combinations</h6>
+         <h6><u>From CLoset:</u> Will give combinations from your cloet</h6>
+         <h6><u>Closet:</u> Will allow you to add dress to your closet</h6>
+         <h6><u>Tour:</u>Will allow to pack dress for tour from your closet</h6>
+       </div>
+          </div>
           {closet == true ? (
             <Closetmodel
-              setcloset={setcloset}
+              setcloset={setcloset} 
               closetcolor={closetcolor}
               setclosetcolor={setclosetcolor}
             />
           ) : (
             ""
           )}
-        </div>
+   
       </div>
+     
     </div>
   );
 }

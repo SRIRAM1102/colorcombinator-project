@@ -55,10 +55,11 @@ export function Tour({ lighting, setlighting }) {
         <div id="tour">
           <Navbar setlighting={setlighting} lighting={lighting} />
           <hr />
-          <div className="tourheaders">
-            <h3 className="tourheading">Your tour plan!</h3>
+          <h3>Create tour plan!</h3>
+            <div className="tourheaders">
+            <h6>Check out old history</h6>  
             <button>
-              <Link to="/tour/history">History</Link>
+              <Link to="/tour/history" className="tourtag">History</Link>
             </button>
           </div>
 

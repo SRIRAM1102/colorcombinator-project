@@ -54,7 +54,7 @@
   fill: #dbed64;
 }
 .color-box {
-  border: 2px solid black;
+ 
   height: 1.5rem;
   width: 20rem;
   display: flex;
@@ -127,12 +127,33 @@
   height: 27rem;
   margin-top: -12.5rem;
 }
+
 .imagepositioning {
   display: flex;
   flex-direction: column;
   align-items: center;
+ 
 }
 .dark {
   width: 15rem;
   height: 8rem;
 }
+
+.detailtabs{
+  border: 1px solid black;
+ margin-top: 3rem;
+border-radius: 15px;
+ padding: 2%;
+}
+.detailtabs>h6{
+  font-size: 1rem;
+margin-left: 5rem;
+font-family: cursive;
+}
+
+.detailtabs>h6:hover{
+  color: white;
+  }
+  .detailtabs:hover{
+border-color:white ;
+  }

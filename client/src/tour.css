@@ -1,30 +1,38 @@
 #tour {
   background: #1d2026;
   min-height: 100vh;
-
   color: white;
 }
 .tourheaders {
   display: flex;
+  gap:2%;
+
 }
-.tourheaders > button {
+.tourheaders >h6{
+   font-size: 1rem;
+   margin-left: 2rem;
+}
+.tourheaders> button {
+  width: 5rem;
+  height: 2rem;
+}
+#tour > button {
   height: fit-content;
   width: 5rem;
-  margin: 5%;
-  border-radius: 10px;
+  height: 2rem;
+ margin-left:4%;
   border: 3px solid white;
-  color: black;
   background: #dbed64;
   font-weight: 900;
-  text-decoration: none;
 }
-.tourheaders > button > Link {
+.tourtag {
   text-decoration: none;
+  color: black;
 }
-.tourheading {
+#tour> h3{
   font-size: 2.5rem;
-  padding: 1% 10%;
-  margin-right: auto;
+  padding: 1%;
+  text-align:left;
 }
 .submithandler {
   border: 3px solid blue;
@@ -49,6 +57,7 @@ hr {
   width: 25vw;
   padding: 3%;
   margin-left: 4rem;
+  margin-top:3rem ;
 }
 .colorselector {
   display: flex;
